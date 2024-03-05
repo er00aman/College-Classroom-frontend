@@ -25,9 +25,19 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/style-starter.css",
+              "node_modules/sweetalert2/src/sweetalert2.scss",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery-3.3.1.min.js",
+              "src/assets/js/theme-change.js",
+              "src/assets/js/jquery.magnific-popup.min.js",
+              "src/assets/js/owl.carousel.js",
+              "src/assets/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "757a2cd5-159c-47fd-a235-22f8a98bbdb7"
   }
 }

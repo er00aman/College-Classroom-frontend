@@ -1,0 +1,146 @@
+  <!--header-->
+  <header id="site-header" class="fixed-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg stroke">
+            <h3 class="logo">
+                <a class="navbar-brand" routerLink="/layout/home">
+                    <img class="img-fluid" src="assets/images/logo.png" alt=" "> <span>DAVIET Classroom</span>
+                </a>
+            </h3>
+            <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+                data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ml-lg-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" routerLink="/layout/home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/department">Department</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/manage-teacher">Manage-teacher</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/manage-department">Manage-department</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/manage-course">Manage-course</a>
+                    </li>
+                    <li class="nav-item" *ngIf="email == null">
+                        <a class="nav-link" routerLink="/layout/admin-login">Admin login</a>
+                    </li>
+                    <li class="nav-item" *ngIf="email">
+                        <a class="nav-link" (click)="logout()">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/course">Add course</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/add-teacher">Add teacher</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/add-student">Add student</a>
+                    </li>
+                    <li class="nav-item" *ngIf="teacherRegisterEmail == null">
+                        <a class="nav-link" routerLink="/layout/teacher-login">Teacher login</a>
+                    </li>
+                    <li class="nav-item" *ngIf="teacherRegisterEmail">
+                        <a class="nav-link"(click)="teacherLogout()">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/teacher-material">Teacher upload material</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/teacher-assignment">Teacher upload assignment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/add-subject">Add subject</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/teacher-forget-password">Teacher-forget-password</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/student-register">Student-register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/student-login">Student-login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/assignment-upload">Assignment-upload</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/update-department/:_id">update-department/:_id</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/update-course/:_id">update-course/:_id</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/update-add-teacher/:_id">update-add-teacher/:_id</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/update-add-student/:_id">update-add-student/:_id</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/update-teacher-material/:_id">update-teacher-material/:_id</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/update-teacher-assignment/:_id">update-teacher-assignment/:_id</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/update-add-subject/:_id">update-add-subject/:_id</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/update-student-assignment/:_id">update-student-assignment/:_id</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/admin-login">Admin-login</a>
+                    </li> -->
+                    <!-- search button -->
+                    <div class="search-right">
+                        <a href="#search" class="btn button-style" title="search">Search</a>
+                        <!-- search popup -->
+                        <div id="search" class="pop-overlay">
+                            <div class="popup">
+                                <h4 class="search-pop-text-w3 text-white text-center mb-4">Search Here Your
+                                    Online Course
+                                </h4>
+                                <form action="#error" method="GET" class="search-box">
+                                    <div class="input-search"> <span class="fa fa-search mr-2"
+                                            aria-hidden="true"></span><input type="search"
+                                            placeholder="Enter Keyword" name="search" required="required"
+                                            autofocus="">
+                                    </div>
+                                    <button type="submit" class="btn button-style">Search</button>
+                                </form>
+                            </div>
+                            <a class="close" href="#close">×</a>
+                        </div>
+                        <!-- //search popup -->
+                    </div>
+                    <!-- //search button -->
+                </ul>
+            </div>
+            <!-- toggle switch for light and dark theme -->
+            <div class="cont-ser-position">
+                <nav class="navigation">
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox">
+                            <div class="mode-container">
+                                <i class="gg-sun"></i>
+                                <i class="gg-moon"></i>
+                            </div>
+                        </label>
+                    </div>
+                </nav>
+            </div>
+            <!-- //toggle switch for light and dark theme -->
+        </nav>
+    </div>
+</header>
+<!--//header-->
