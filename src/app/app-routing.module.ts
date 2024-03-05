@@ -35,6 +35,8 @@ import { UpdateStudentAssignmentComponent } from './update-student-assignment/up
 import { SemesterComponent } from './semester/semester.component';
 import { ManageSemesterComponent } from './manage-semester/manage-semester.component';
 import { UpdateSemesterComponent } from './update-semester/update-semester.component';
+import { SubjectComponent } from './subject/subject.component';
+import { ManagetSubjectComponent } from './managet-subject/managet-subject.component';
 
 const routes: Routes = [
   {
@@ -59,8 +61,11 @@ const routes: Routes = [
         path:'semester',component:SemesterComponent
       },
       {
+        path:'subject',component:SubjectComponent
+      },
+      {
         path:'add-teacher',component:TeacherComponent
-      }, 
+      },
       {
         path:'add-student',component:StudentComponent
       },
@@ -99,6 +104,9 @@ const routes: Routes = [
       },
       {
         path:'manage-semester',component:ManageSemesterComponent
+      },
+      {
+        path:'manage-subject',component:ManagetSubjectComponent
       },
       {
         path:'manage-teacher',component:ManageTeacherComponent

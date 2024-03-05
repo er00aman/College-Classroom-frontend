@@ -45,7 +45,10 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { HttpClientModule } from "@angular/common/http";
 import { SemesterComponent } from './semester/semester.component';
 import { ManageSemesterComponent } from './manage-semester/manage-semester.component';
-import { UpdateSemesterComponent } from './update-semester/update-semester.component'
+import { UpdateSemesterComponent } from './update-semester/update-semester.component';
+import { SubjectComponent } from './subject/subject.component';
+import { ManagetSubjectComponent } from './managet-subject/managet-subject.component';
+import { UpdateSubjectComponent } from './update-subject/update-subject.component'
 
 
 @NgModule({
@@ -87,7 +90,10 @@ import { UpdateSemesterComponent } from './update-semester/update-semester.compo
     UpdateStudentAssignmentComponent,
     SemesterComponent,
     ManageSemesterComponent,
-    UpdateSemesterComponent
+    UpdateSemesterComponent,
+    SubjectComponent,
+    ManagetSubjectComponent,
+    UpdateSubjectComponent
   ],
   imports: [
     BrowserModule,
