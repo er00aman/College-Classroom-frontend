@@ -28,5 +28,4 @@ export class AuthService {
   removedata(){
     localStorage.clear()
   }
-
 }

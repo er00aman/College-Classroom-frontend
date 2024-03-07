@@ -37,6 +37,7 @@ import { ManageSemesterComponent } from './manage-semester/manage-semester.compo
 import { UpdateSemesterComponent } from './update-semester/update-semester.component';
 import { SubjectComponent } from './subject/subject.component';
 import { ManagetSubjectComponent } from './managet-subject/managet-subject.component';
+import { UpdateSubjectComponent } from './update-subject/update-subject.component';
 
 const routes: Routes = [
   {
@@ -134,6 +135,9 @@ const routes: Routes = [
       },
       {
         path:'update-semester/:_id',component:UpdateSemesterComponent
+      },
+      {
+        path:'update-subject/:_id',component:UpdateSubjectComponent
       },
       {
         path:'update-add-teacher/:_id',component:UpdateAddTeacherComponent

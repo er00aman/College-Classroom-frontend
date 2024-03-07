@@ -22,15 +22,6 @@
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/layout/department">Department</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/manage-teacher">Manage-teacher</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/manage-department">Manage-department</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/manage-course">Manage-course</a>
-                    </li>
                     <li class="nav-item" *ngIf="email == null">
                         <a class="nav-link" routerLink="/layout/admin-login">Admin login</a>
                     </li>
@@ -41,7 +32,7 @@
                         <a class="nav-link" routerLink="/layout/course">Add course</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/add-teacher">Add teacher</a>
+                        <a class="nav-link" routerLink="/layout/semester">Add semester</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/layout/add-student">Add student</a>
@@ -52,54 +43,6 @@
                     <li class="nav-item" *ngIf="teacherRegisterEmail">
                         <a class="nav-link"(click)="teacherLogout()">Logout</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/teacher-material">Teacher upload material</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/teacher-assignment">Teacher upload assignment</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/add-subject">Add subject</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/teacher-forget-password">Teacher-forget-password</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/student-register">Student-register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/student-login">Student-login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/assignment-upload">Assignment-upload</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/update-department/:_id">update-department/:_id</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/update-course/:_id">update-course/:_id</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/update-add-teacher/:_id">update-add-teacher/:_id</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/update-add-student/:_id">update-add-student/:_id</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/update-teacher-material/:_id">update-teacher-material/:_id</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/update-teacher-assignment/:_id">update-teacher-assignment/:_id</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/update-add-subject/:_id">update-add-subject/:_id</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/update-student-assignment/:_id">update-student-assignment/:_id</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/admin-login">Admin-login</a>
-                    </li> -->
                     <!-- search button -->
                     <div class="search-right">
                         <a href="#search" class="btn button-style" title="search">Search</a>
