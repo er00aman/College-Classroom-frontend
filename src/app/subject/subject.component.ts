@@ -57,12 +57,11 @@ export class SubjectComponent implements OnInit{
     )
   }
 
-
   add(){
     this.spinner.show()
     this.subjectService.add(this.subjectAdd.value).subscribe(
       (res:any)=>{
-        if(res.message){
+        if(res.success){
           this.spinner.hide()
           this.toastr.success(res.message)
           this.router.navigateByUrl('/layout/manage-subject')
@@ -71,9 +70,11 @@ export class SubjectComponent implements OnInit{
           this.toastr.error(res.message)
         }
       },
-      (err)=>{
+      err=>{
         this.toastr.error(err)
       }
     )
   }
+
+
 }

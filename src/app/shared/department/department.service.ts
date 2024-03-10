@@ -16,7 +16,7 @@ export class DepartmentService {
   }
 
   add(form:any){
-    var headers_obj = new HttpHeaders().set('authorization',this.token)
+    var headers_obj = new HttpHeaders().set('authorization', this.token)
     return this.http.post(this.apiUrl+'department/add',form, {headers:headers_obj})
   }
 

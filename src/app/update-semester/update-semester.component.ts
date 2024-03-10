@@ -6,6 +6,7 @@ import { DepartmentService } from '../shared/department/department.service';
 import { CourseService } from '../shared/course/course.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { SemesterService } from '../shared/semester/semester.service';
+import { AuthService } from '../shared/auth/auth.service';
 
 @Component({
   selector: 'app-update-semester',
@@ -16,7 +17,7 @@ export class UpdateSemesterComponent implements OnInit{
 
 
 
-  constructor(private router:Router,private spinner:NgxSpinnerService,private toastr:ToastrService,private departmentService:DepartmentService,private courseService:CourseService,private activeRoutes:ActivatedRoute,private semesterService:SemesterService){}
+  constructor(private router:Router,private spinner:NgxSpinnerService,private toastr:ToastrService,private departmentService:DepartmentService,private courseService:CourseService,private activeRoutes:ActivatedRoute,private semesterService:SemesterService, private authservice:AuthService){}
 
   updateSemester = new FormGroup({
     _id : new FormControl(),
@@ -26,7 +27,7 @@ export class UpdateSemesterComponent implements OnInit{
   })
 
   ngOnInit(): void {
-    this.updateSemester.patchValue({_id:this.activeRoutes.snapshot.paramMap.get('_id')})
+    this.updateSemester.patchValue({'_id':this.activeRoutes.snapshot.paramMap.get('_id')})
     this.getAllDepartment()
     this.getAllCourse()
   }
@@ -73,6 +74,7 @@ export class UpdateSemesterComponent implements OnInit{
         if(res.success){
           this.spinner.hide()
           this.toastr.success(res.message)
+          // this.authservice.setData(this.)
           this.router.navigateByUrl('/layout/manage-semester')
         }else{
           this.spinner.hide()

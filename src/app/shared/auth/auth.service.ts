@@ -9,7 +9,7 @@ export class AuthService {
 
   setData(form:any){
     localStorage.setItem('email',form.data.email)
-    localStorage.setItem('token',form.data.token)
+    localStorage.setItem('Token',form.token)
     localStorage.setItem('userType',form.data.userType)
   }
 
@@ -18,7 +18,7 @@ export class AuthService {
   }
 
   getToken(){
-    return localStorage.getItem('token')
+    return localStorage.getItem('Token')
   }
 
   getUserType(){
