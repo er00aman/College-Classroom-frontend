@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import { SubjectService } from '../shared/subject/subject.service';
 
 @Component({
   selector: 'app-managet-subject',
@@ -7,12 +8,21 @@ import Swal from 'sweetalert2';
   styleUrls: ['./managet-subject.component.css']
 })
 export class ManagetSubjectComponent implements OnInit{
-  constructor() {
+  constructor(private subjectService:SubjectService) {
 
   }
 
   ngOnInit(): void {
+    this.getAllSubject()
+  }
 
+  allSubject:any
+  getAllSubject(){
+    this.subjectService.getAll({status:true}).subscribe(
+      (res:any)=>{
+        this.allSubject = res.data
+      }
+    )
   }
 
   deleteUser(){

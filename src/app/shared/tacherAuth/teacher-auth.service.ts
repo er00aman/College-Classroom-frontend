@@ -9,7 +9,7 @@ export class TeacherAuthService {
 
   setData(form:any){
     localStorage.setItem('email',form.data.teacherRegisterEmail)
-    localStorage.setItem('token',form.data.token)
+    localStorage.setItem('Token',form.token)
     localStorage.setItem('userType',form.data.userType)
   }
 
@@ -18,14 +18,14 @@ export class TeacherAuthService {
   }
 
   getToken(){
-    return localStorage.getItem('token')
+    return localStorage.getItem('Token')
   }
 
   getUserType(){
     return localStorage.getItem('userType')
   }
 
-  clearData(){
+  removeData(){
     localStorage.clear()
   }
 }

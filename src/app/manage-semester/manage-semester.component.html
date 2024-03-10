@@ -28,8 +28,8 @@
             </thead>
             <tbody>
               <tr *ngFor="let semester of allSemester; let i=index" >
-                <th>{{i+1}}</th>
-                <th>{{semester?.departmentId?.name}}</th>
+                <td>{{i+1}}</td>
+                <td>{{semester?.departmentId?.name}}</td>
                 <td>{{semester?.courseId?.courseName}}</td>
                 <td>{{semester?.semester}}</td>
                 <td>

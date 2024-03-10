@@ -13,12 +13,12 @@ import { AuthService } from '../shared/auth/auth.service';
 })
 export class LoginComponent implements OnInit{
 
-  adminlogin = new FormGroup({
+  adminLogin = new FormGroup({
     email: new FormControl(),
     password: new FormControl()
   })
 
-  constructor(private router:Router, private toastr:ToastrService, private spinner:NgxSpinnerService, private loginservice:LoginService, private authservice:AuthService){}
+  constructor(private router:Router, private toastr:ToastrService, private spinner:NgxSpinnerService, private loginService:LoginService, private authService:AuthService){}
 
   ngOnInit(): void {
 
@@ -26,12 +26,12 @@ export class LoginComponent implements OnInit{
 
   login(){
     this.spinner.show()
-    this.loginservice.admin(this.adminlogin.value).subscribe(
+    this.loginService.admin(this.adminLogin.value).subscribe(
       (res:any)=>{
         if(res.success){
           this.spinner.hide()
           this.toastr.success(res.message)
-          this.authservice.setData(res)
+          this.authService.setData(res)
           this.router.navigateByUrl('/layout/home')
         }
         else{
