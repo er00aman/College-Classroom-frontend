@@ -18,7 +18,7 @@
           <table class="table table-striped">
             <thead class="table-dark">
               <tr>
-                <th scope="col">S.N</th>
+                <th scope="col">#</th>
                 <th scope="col">Department</th>
                 <th scope="col">Course</th>
                 <th scope="col">Semester</th>
@@ -27,17 +27,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let subject of allSubject; let i=index" >
+              <tr *ngFor="let sub of allSubject; let i=index;">
                 <td>{{i+1}}</td>
-                <td>{{subject?.departmentId?.name}}</td>
-                <td>{{subject?.courseId?.courseName}}</td>
-                <td>{{subject?.semesterId?.semester}}</td>
-                <td>{{subject?.subjectName}}</td>
+                <td>{{sub?.departmentId?.name}}</td>
+                <td>{{sub?.courseId?.courseName}}</td>
+                <td>{{sub?.semesterId?.semester}}</td>
+                <td>{{sub?.subjectName}}</td>
                 <td>
-                  <a [routerLink]="['/layout/update-subject', subject._id]">
+                  <a [routerLink]="['/layout/update-semester', sub._id]">
                     <i class="fa fa-edit text-success px-3"></i>
                   </a>
-                  <i class="fa fa-trash text-danger px-3"(click)="deleteUser()"></i>
+                  <i class="fa fa-trash text-danger px-3" (click)="deleteUser(sub._id)"></i>
                 </td>
               </tr>
             </tbody>

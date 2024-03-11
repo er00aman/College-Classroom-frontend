@@ -25,7 +25,7 @@ export class ManagetSubjectComponent implements OnInit{
     )
   }
 
-  deleteUser(){
+  deleteUser(id:any){
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -36,11 +36,16 @@ export class ManagetSubjectComponent implements OnInit{
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
-          icon: "success"
-        });
+        this.subjectService.block({_id:id,status:false}).subscribe(
+          (res:any)=>{
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success"
+            });
+            this.getAllSubject()
+          }
+        )
       }
     });
   }

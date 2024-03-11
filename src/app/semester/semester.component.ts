@@ -49,7 +49,7 @@ export class SemesterComponent implements OnInit{
     this.spinner.show()
     this.semesterService.add(this.semesterAdd.value).subscribe(
       (res:any)=>{
-        if(res.message){
+        if(res.success){
           this.spinner.hide()
           this.toastr.success(res.message)
           this.router.navigateByUrl('/layout/manage-semester')
@@ -58,7 +58,7 @@ export class SemesterComponent implements OnInit{
           this.toastr.error(res.message)
         }
       },
-      (err)=>{
+      err=>{
         this.toastr.error(err)
       }
     )

@@ -27,7 +27,7 @@ export class SemesterService {
 
   getAll(form:any){
     var headers_obj = new HttpHeaders().set('authorization',this.token)
-    return this.http.post(this.apiUrl+ 'semesterGetAll',form,{headers:headers_obj})
+    return this.http.post(this.apiUrl+'semesterGetAll',form,{headers:headers_obj})
   }
 
   update(form:any){

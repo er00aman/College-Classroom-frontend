@@ -29,9 +29,9 @@
             <tbody>
               <tr *ngFor="let semester of allSemester; let i=index" >
                 <td>{{i+1}}</td>
-                <td>{{semester?.departmentId?.name}}</td>
-                <td>{{semester?.courseId?.courseName}}</td>
-                <td>{{semester?.semester}}</td>
+                <td>{{semester.departmentId.name}}</td>
+                <td>{{semester.courseId.courseName}}</td>
+                <td>{{semester.semester}}</td>
                 <td>
                   <a [routerLink]="['/layout/update-semester', semester._id]">
                     <i class="fa fa-edit text-success px-3"></i>

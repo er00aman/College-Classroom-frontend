@@ -15,8 +15,8 @@ export class ManageSemesterComponent implements OnInit{
   ngOnInit(): void {
     this.getAllSemester()
   }
-
   allSemester:any
+
   getAllSemester(){
     this.semesterService.getAll({status:true}).subscribe(
       (res:any)=>{
