@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import { TeacherService } from '../shared/teacher/teacher.service';
 
 @Component({
   selector: 'app-manage-teacher',
@@ -8,10 +9,22 @@ import Swal from 'sweetalert2';
 })
 export class ManageTeacherComponent implements OnInit{
 
-  constructor(){}
+  constructor(private teacherService:TeacherService){}
 
   ngOnInit(): void {
+    this.allTeacherDetail()
+  }
 
+  allTeacher:any
+  allTeacherDetail(){
+    this.teacherService.getAll({status:true}).subscribe(
+      (res:any)=>{
+
+        console.log(res.data)
+
+        this.allTeacher = res.data
+      }
+    )
   }
 
   deleteUser(){
@@ -32,6 +45,11 @@ export class ManageTeacherComponent implements OnInit{
         });
       }
     });
+  }
+
+  getdate(d:any){
+    let dd = d.split("T")
+    return dd[0]
   }
 }
 

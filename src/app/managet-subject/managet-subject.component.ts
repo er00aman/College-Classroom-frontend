@@ -20,6 +20,9 @@ export class ManagetSubjectComponent implements OnInit{
   getAllSubject(){
     this.subjectService.getAll({status:true}).subscribe(
       (res:any)=>{
+
+        console.log(res.data)
+
         this.allSubject = res.data
       }
     )

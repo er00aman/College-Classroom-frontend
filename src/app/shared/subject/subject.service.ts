@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
-import { TeacherAuthService } from '../tacherAuth/teacher-auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +9,9 @@ export class SubjectService {
   apiUrl:any
   token:any
 
-  constructor(private http:HttpClient,@Inject('baseurl')_baseUrl:any,private teacherAuthService:TeacherAuthService) {
+  constructor(private http:HttpClient,@Inject('baseurl')_baseUrl:any,private authService:AuthService) {
     this.apiUrl = _baseUrl
-    this.token = teacherAuthService.getToken()
+    this.token = authService.getToken()
   }
 
   add(form:any){

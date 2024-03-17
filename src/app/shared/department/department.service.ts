@@ -10,9 +10,9 @@ export class DepartmentService {
   apiUrl:any
   token:any
 
-  constructor(private http:HttpClient,@Inject('baseurl')_baseurl:any, private authservice:AuthService) {
+  constructor(private http:HttpClient,@Inject('baseurl')_baseurl:any, private authService:AuthService) {
     this.apiUrl= _baseurl
-    this.token= this.authservice.getToken()
+    this.token= this.authService.getToken()
   }
 
   add(form:any){

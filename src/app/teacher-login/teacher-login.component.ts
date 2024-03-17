@@ -5,7 +5,6 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../shared/auth/auth.service';
 import { TeacherLoginService } from '../shared/teacherLogin/teacher-login.service';
-import { TeacherAuthService } from '../shared/tacherAuth/teacher-auth.service';
 
 @Component({
   selector: 'app-teacher-login',
@@ -18,7 +17,7 @@ export class TeacherLoginComponent implements OnInit{
     password : new FormControl()
   })
 
-  constructor (private router:Router,private spinner:NgxSpinnerService,private toastr:ToastrService,private teacherAuth:TeacherAuthService,private teacherLoginService:TeacherLoginService){}
+  constructor (private router:Router,private spinner:NgxSpinnerService,private toastr:ToastrService,private teacherLoginService:TeacherLoginService,private authService:AuthService){}
 
   ngOnInit(): void {
 
@@ -31,7 +30,7 @@ export class TeacherLoginComponent implements OnInit{
         if(res.success){
           this.spinner.hide()
           this.toastr.success(res.message)
-          this.teacherAuth.setData(res)
+          this.authService.setData(res)
           this.router.navigateByUrl('/layout/home')
         }else{
           this.spinner.hide()

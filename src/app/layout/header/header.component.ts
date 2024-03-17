@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/auth/auth.service';
-import { TeacherAuthService } from 'src/app/shared/tacherAuth/teacher-auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +9,7 @@ import { TeacherAuthService } from 'src/app/shared/tacherAuth/teacher-auth.servi
 })
 export class HeaderComponent implements OnInit{
 
-  constructor(private authService : AuthService, private router: Router,private teacherAuth:TeacherAuthService){}
+  constructor(private authService : AuthService, private router: Router,){}
 
   email:any
   userType:any
@@ -35,11 +34,11 @@ export class HeaderComponent implements OnInit{
 
 
 
-    if(this.teacherAuth.getEmail() != null){
-      this.teacherRegisterEmail = this.teacherAuth.getEmail()
+    if(this.authService.getEmail() != null){
+      this.teacherRegisterEmail = this.authService.getEmail()
     }
-    if(this.teacherAuth.getUserType() != null){
-      this.userType = this.teacherAuth.getUserType()
+    if(this.authService.getUserType() != null){
+      this.userType = this.authService.getUserType()
     }
   }
 

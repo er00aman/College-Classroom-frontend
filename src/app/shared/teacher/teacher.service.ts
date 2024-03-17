@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable} from '@angular/core';
-import { TeacherAuthService } from '../tacherAuth/teacher-auth.service';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +9,33 @@ export class TeacherService{
   apiUrl:any
   token:any
 
-  constructor(private Http:HttpClient,@Inject('baseurl')_baseUrl:any,private teacherAuthService:TeacherAuthService) {
+  constructor(private http:HttpClient,@Inject('baseurl')_baseUrl:any,private authService:AuthService) {
     this.apiUrl = _baseUrl
-    this.token = teacherAuthService.getToken()
+    this.token = authService.getToken()
   }
 
   add(form:any){
     var headers_obj = new HttpHeaders().set('authorization',this.token)
-    return this.Http.post(this.apiUrl+'teacher',form,{headers:headers_obj})
+    return this.http.post(this.apiUrl+'teacher',form,{headers:headers_obj})
+  }
+
+  getAll(form:any){
+    var headers_obj = new HttpHeaders().set('authorization',this.token)
+    return this.http.post(this.apiUrl+'teacherGetAll',form,{headers:headers_obj})
+  }
+
+  getSingle(form:any){
+    var headers_obj = new HttpHeaders().set('authorization',this.token)
+    return this.http.post(this.apiUrl+'teacherGetSingle',form,{headers:headers_obj})
+  }
+
+  update(form:any){
+    var headers_obj = new HttpHeaders().set('authorization',this.token)
+    return this.http.post(this.apiUrl+'teacherUpdate',form,{headers:headers_obj})
+  }
+
+  block(form:any){
+    var headers_obj = new HttpHeaders().set('authorization',this.token)
+    return this.http.post(this.apiUrl+'teacherBlock',form,{headers:headers_obj})
   }
 }

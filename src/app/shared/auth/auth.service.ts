@@ -9,6 +9,7 @@ export class AuthService {
 
   setData(form:any){
     localStorage.setItem('email',form.data.email)
+    localStorage.setItem('email',form.data.teacherRegisterEmail)
     localStorage.setItem('Token',form.token)
     localStorage.setItem('userType',form.data.userType)
   }
