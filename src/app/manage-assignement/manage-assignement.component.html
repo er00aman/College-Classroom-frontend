@@ -23,20 +23,24 @@
                   <th scope="col">S.N</th>
                   <th scope="col">Department</th>
                   <th scope="col">Course</th>
-                  <th scope="col">Teacher</th>
-                  <th scope="col">Date</th>
+                  <th scope="col">Subject</th>
+                  <th scope="col">Semester</th>
                   <th scope="col">Assignment</th>
+                  <th scope="col">Written-assignment</th>
+                  <th scope="col">Assignment no</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th>1</th>
-                  <td>Mechanical</td>
-                  <td>###</td>
-                  <td>#####</td>
-                  <td>######</td>
-                  <td>###########</td>
+                <tr *ngFor="let allAssign of allAssignment" let i="index">
+                  <th>{{1}}</th>
+                  <td>{{allAssign.departmentId.name}}</td>
+                  <th>{{allAssign.courseId.courseName}}</th>
+                  <td>{{allAssign.subjectId.subjectName}}</td>
+                  <td>{{allAssign.semesterId.semester}}</td>
+                  <td>{{allAssign.file}}</td>
+                  <td>{{allAssign.writeAssignment}}</td>
+                  <td>{{allAssign.assignmentNumber}}</td>
                   <td>
                     <i class="fa fa-edit text-success px-3"></i>
                     <i class="fa fa-trash text-danger px-3"(click)="deleteUser()"></i>

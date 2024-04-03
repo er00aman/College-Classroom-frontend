@@ -95,7 +95,7 @@ const routes: Routes = [
         path:'student-register',component:StudentRegisterComponent
       },
       {
-        path:'assignment-upload',component:AssignmentUploadComponent
+        path:'assignment-assignment',component:AssignmentUploadComponent
       },
       {
         path:'manage-department',component:ManageDepartmentComponent

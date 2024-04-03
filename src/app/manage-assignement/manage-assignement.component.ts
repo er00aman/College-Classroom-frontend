@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import { TeacherAssignmentServiceService } from '../shared/teacher-assignment-service/teacher-assignment-service.service';
 
 @Component({
   selector: 'app-manage-assignement',
@@ -8,12 +9,20 @@ import Swal from 'sweetalert2';
 })
 export class ManageAssignementComponent implements OnInit{
 
-  constructor(){}
+  constructor(private teacherAssignmentService:TeacherAssignmentServiceService){}
 
   ngOnInit(): void {
-
+    this.getAllAssignment()
   }
 
+  allAssignment:any
+  getAllAssignment(){
+    this.teacherAssignmentService.getAll({status:true}).subscribe(
+      (res:any)=>{
+        this.allAssignment = res.data
+      }
+    )
+  }
 
   deleteUser(){
     Swal.fire({
