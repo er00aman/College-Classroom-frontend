@@ -10,6 +10,9 @@ input{
 .mb-3 label{
   color: #060606 !important;
 }
+label{
+  color: black;
+}
 .login-button button:hover{
   background-color: #3F3D56;
   color: #fff;

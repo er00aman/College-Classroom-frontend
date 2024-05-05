@@ -16,7 +16,7 @@ export class ManageCourseComponent implements OnInit{
   ngOnInit(): void {
     this.getAllCourse()
   }
-  
+
   allCourse:any
   getAllCourse(){
     this.courseService.getall({status:true}).subscribe(
@@ -32,7 +32,7 @@ export class ManageCourseComponent implements OnInit{
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#687a8b",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {

@@ -37,7 +37,6 @@ import { UpdateAddTeacherComponent } from './update-add-teacher/update-add-teach
 import { UpdateAddStudentComponent } from './update-add-student/update-add-student.component';
 import { UpdateTeacherMaterialComponent } from './update-teacher-material/update-teacher-material.component';
 import { UpdateTeacherAssignmentComponent } from './update-teacher-assignment/update-teacher-assignment.component';
-import { UpdateAddSubjectComponent } from './update-add-subject/update-add-subject.component';
 import { UpdateStudentAssignmentComponent } from './update-student-assignment/update-student-assignment.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -48,7 +47,8 @@ import { ManageSemesterComponent } from './manage-semester/manage-semester.compo
 import { UpdateSemesterComponent } from './update-semester/update-semester.component';
 import { SubjectComponent } from './subject/subject.component';
 import { ManagetSubjectComponent } from './managet-subject/managet-subject.component';
-import { UpdateSubjectComponent } from './update-subject/update-subject.component'
+import { SubjectUpdateComponent } from './subject-update/subject-update.component';
+// import { UpdateSubjectComponent } from './update-subject/update-subject.component';
 
 
 @NgModule({
@@ -86,14 +86,14 @@ import { UpdateSubjectComponent } from './update-subject/update-subject.componen
     UpdateAddStudentComponent,
     UpdateTeacherMaterialComponent,
     UpdateTeacherAssignmentComponent,
-    UpdateAddSubjectComponent,
     UpdateStudentAssignmentComponent,
     SemesterComponent,
     ManageSemesterComponent,
     UpdateSemesterComponent,
     SubjectComponent,
     ManagetSubjectComponent,
-    UpdateSubjectComponent
+    SubjectUpdateComponent
+    // UpdateSubjectComponent
   ],
   imports: [
     BrowserModule,

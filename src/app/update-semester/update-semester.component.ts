@@ -30,6 +30,7 @@ export class UpdateSemesterComponent implements OnInit{
     this.updateSemester.patchValue({'_id':this.activeRoutes.snapshot.paramMap.get('_id')})
     this.getAllDepartment()
     this.getAllCourse()
+    this.getSingleSemester()
   }
 
   allDepartment:any
@@ -58,7 +59,7 @@ export class UpdateSemesterComponent implements OnInit{
       (res:any)=>{
         this.updateSemester.patchValue({'departmentId':res.data.departmentId._id})
         this.updateSemester.patchValue({'courseId':res.data.courseId._id})
-        this.updateSemester.patchValue({'semester':res.data.courseName})
+        this.updateSemester.patchValue({'semester':res.data.semester})
       },
       err=>{
 
@@ -74,7 +75,6 @@ export class UpdateSemesterComponent implements OnInit{
         if(res.success){
           this.spinner.hide()
           this.toastr.success(res.message)
-          // this.authservice.setData(this.)
           this.router.navigateByUrl('/layout/manage-semester')
         }else{
           this.spinner.hide()

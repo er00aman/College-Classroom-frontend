@@ -22,8 +22,16 @@ export class HeaderComponent implements OnInit{
     // console.log(this.authService.getEmail())
     // console.log(this.authService.getUserType())
 
-    if(this.authService.getEmail() != null)
+    if(this.authService.getTeacherEmail() != null)
     {
+      this.email = this.authService.getTeacherEmail()
+    }
+
+    if(this.authService.getStudentEmail() != null){
+      this.teacherRegisterEmail = this.authService.getStudentEmail()
+    }
+
+    if(this.authService.getEmail() != null){
       this.email = this.authService.getEmail()
     }
 
@@ -34,22 +42,12 @@ export class HeaderComponent implements OnInit{
 
 
 
-    if(this.authService.getEmail() != null){
-      this.teacherRegisterEmail = this.authService.getEmail()
-    }
-    if(this.authService.getUserType() != null){
-      this.userType = this.authService.getUserType()
-    }
   }
 
   logout(){
-    this.authService.removedata()
+    this.authService.removeData()
     this.router.navigateByUrl ('/layout/admin-login')
   }
 
-  teacherLogout(){
-    this.authService.removedata()
-    this.router.navigateByUrl('/layout/teacher-login')
-  }
 
 }

@@ -31,18 +31,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let allDetail of allTeacher; let i=index;">
+              <tr *ngFor="let teacher of allTeacher; let i=index;">
                 <td>{{i+1}}</td>
-                <td>{{allDetail.departmentId.name}}</td>
-                <td>{{allDetail.courseId.courseName}}</td>
-                <td>{{allDetail.teacherName}}</td>
-                <td>{{allDetail.teacherRegisterEmail}}</td>
-                <td>{{allDetail.workExperience}}</td>
-                <td>{{allDetail.teacherDesignation}}</td>
-                <td>{{getdate(allDetail.createdAt)}}</td>
+                <td>{{teacher.departmentId.name}}</td>
+                <td>{{teacher.courseId.courseName}}</td>
+                <td>{{teacher.teacherName}}</td>
+                <td>{{teacher.teacherRegisterEmail}}</td>
+                <td>{{teacher.workExperience}}</td>
+                <td>{{teacher.teacherDesignation}}</td>
+                <td>{{teacher.createdAt}}</td>
                 <td>
-                  <i class="fa fa-edit text-success px-3"></i>
-                  <i class="fa fa-trash text-danger px-3"(click)="deleteUser()"></i>
+                  <a [routerLink]="['/layout/update-add-teacher', teacher._id]">
+                    <i class="fa fa-edit text-success px-3"></i>
+                  </a>
+                  <i class="fa fa-trash text-danger px-3" (click)="deleteUser(teacher._id)"></i>
                 </td>
               </tr>
             </tbody>

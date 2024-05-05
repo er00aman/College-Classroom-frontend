@@ -30,14 +30,13 @@ import { UpdateAddTeacherComponent } from './update-add-teacher/update-add-teach
 import { UpdateAddStudentComponent } from './update-add-student/update-add-student.component';
 import { UpdateTeacherMaterialComponent } from './update-teacher-material/update-teacher-material.component';
 import { UpdateTeacherAssignmentComponent } from './update-teacher-assignment/update-teacher-assignment.component';
-import { UpdateAddSubjectComponent } from './update-add-subject/update-add-subject.component';
 import { UpdateStudentAssignmentComponent } from './update-student-assignment/update-student-assignment.component';
 import { SemesterComponent } from './semester/semester.component';
 import { ManageSemesterComponent } from './manage-semester/manage-semester.component';
 import { UpdateSemesterComponent } from './update-semester/update-semester.component';
 import { SubjectComponent } from './subject/subject.component';
 import { ManagetSubjectComponent } from './managet-subject/managet-subject.component';
-import { UpdateSubjectComponent } from './update-subject/update-subject.component';
+import { SubjectUpdateComponent } from './subject-update/subject-update.component';
 
 const routes: Routes = [
   {
@@ -91,9 +90,9 @@ const routes: Routes = [
       {
         path:'student-login',component:StudentLoginComponent
       },
-      {
-        path:'student-register',component:StudentRegisterComponent
-      },
+      // {
+      //   path:'student-register',component:StudentRegisterComponent
+      // },
       {
         path:'assignment-assignment',component:AssignmentUploadComponent
       },
@@ -137,7 +136,7 @@ const routes: Routes = [
         path:'update-semester/:_id',component:UpdateSemesterComponent
       },
       {
-        path:'update-subject/:_id',component:UpdateSubjectComponent
+        path:'update-subject/:_id',component:SubjectUpdateComponent
       },
       {
         path:'update-add-teacher/:_id',component:UpdateAddTeacherComponent
@@ -150,9 +149,6 @@ const routes: Routes = [
       },
       {
         path:'update-teacher-assignment/:_id',component:UpdateTeacherAssignmentComponent
-      },
-      {
-        path:'update-add-subject/:_id',component:UpdateAddSubjectComponent
       },
       {
         path:'update-student-assignment/:_id',component:UpdateStudentAssignmentComponent

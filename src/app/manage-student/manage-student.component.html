@@ -23,6 +23,7 @@
                   <th scope="col">Department</th>
                   <th scope="col">Course</th>
                   <th scope="col">Student-name</th>
+                  <th scope="col">Email</th>
                   <th scope="col">University roll-no</th>
                   <th scope="col">College roll-no</th>
                   <th scope="col">Semester</th>
@@ -30,45 +31,18 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th>1</th>
-                  <td>Mechanical</td>
-                  <td>###</td>
-                  <td>#####</td>
-                  <td>##########</td>
-                  <td>###########</td>
-                  <td>###########</td>
+                <tr *ngFor="let student of allStudent; let i = index">
+                  <th>{{i+1}}</th>
+                  <td>{{student.departmentId.name}}</td>
+                  <td>{{student.courseId.courseName}}</td>
+                  <td>{{student.studentName}}</td>
+                  <td>{{student.studentEmail}}</td>
+                  <td>{{student.universityRollNo}}</td>
+                  <td>{{student.cRollNo}}</td>
+                  <td>{{student.semesterId.semester}}</td>
                   <td>
-                    <i class="fa fa-edit text-success px-3"routerLink="/layout/add-student"></i>
-                    <i class="fa fa-trash text-danger px-3"(click)="deleteUser()"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <th>2</th>
-                  <td>CSE</td>
-                  <td>###</td>
-                  <td>#####</td>
-                  <td>############</td>
-                  <td>###############</td>
-                  <td>###############</td>
-                  <td>
-                    <i class="fa fa-edit text-success px-3"routerLink="/layout/add-student"></i>
-                    <i class="fa fa-trash text-danger px-3"(click)="deleteUser()"></i>
-
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>#</td>
-                  <td>###</td>
-                  <td>##########</td>
-                  <td>#############</td>
-                  <td>#############</td>
-                  <td>#############</td>
-                  <td>
-                    <i class="fa fa-edit text-success px-3"routerLink="/layout/add-student"></i>
-                    <i class="fa fa-trash text-danger px-3"(click)="deleteUser()"></i>
-
+                    <i class="fa fa-edit text-success px-3"[routerLink]="['/layout/update-add-student',student._id]"></i>
+                    <i class="fa fa-trash text-danger px-3"(click)="deleteUser(student._id)"></i>
                   </td>
                 </tr>
               </tbody>

@@ -61,9 +61,7 @@ export class TeacherComponent implements OnInit{
         }
       },
       (err)=>{
-        (res:any)=>{
-          this.toastr.error(err)
-        }
+        this.toastr.error(err)
       }
     )
   }

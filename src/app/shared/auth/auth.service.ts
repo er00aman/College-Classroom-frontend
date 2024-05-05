@@ -8,12 +8,19 @@ export class AuthService {
   constructor() { }
 
   setData(form:any){
+    localStorage.setItem('teacherEmail',form.data.teacherRegisterEmail)
+    localStorage.setItem('studentEmail',form.data.studentEmail)
     localStorage.setItem('email',form.data.email)
-    localStorage.setItem('email',form.data.teacherRegisterEmail)
     localStorage.setItem('Token',form.token)
     localStorage.setItem('userType',form.data.userType)
   }
 
+  getTeacherEmail(){
+    return localStorage.getItem('teacherEmail')
+  }
+  getStudentEmail(){
+    return localStorage.getItem('studentEmail')
+  }
   getEmail(){
     return localStorage.getItem('email')
   }
@@ -26,7 +33,7 @@ export class AuthService {
     return localStorage.getItem('userType')
   }
 
-  removedata(){
+  removeData(){
     localStorage.clear()
   }
 }

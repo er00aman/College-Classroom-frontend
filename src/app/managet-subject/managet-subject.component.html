@@ -29,12 +29,12 @@
             <tbody>
               <tr *ngFor="let sub of allSubject; let i=index;">
                 <td>{{i+1}}</td>
-                <td>{{sub?.departmentId?.name}}</td>
-                <td>{{sub?.courseId?.courseName}}</td>
-                <td>{{sub?.semesterId?.semester}}</td>
-                <td>{{sub?.subjectName}}</td>
+                <td>{{sub.departmentId.name}}</td>
+                <td>{{sub.courseId.courseName}}</td>
+                <td>{{sub.semesterId.semester}}</td>
+                <td>{{sub.subjectName}}</td>
                 <td>
-                  <a [routerLink]="['/layout/update-add-subject', sub._id]">
+                  <a [routerLink]="['/layout/update-subject', sub._id]">
                     <i class="fa fa-edit text-success px-3"></i>
                   </a>
                   <i class="fa fa-trash text-danger px-3" (click)="deleteUser(sub._id)"></i>
