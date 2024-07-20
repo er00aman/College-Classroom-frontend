@@ -4,7 +4,7 @@
         <nav class="navbar navbar-expand-lg stroke">
             <h3 class="logo">
                 <a class="navbar-brand" routerLink="/layout/home">
-                    <img class="img-fluid" src="assets/images/logo.png" alt=" "> <span>DAVIET Classroom</span>
+                    <img class="img-fluid" src="assets/images/logo.png" alt=" "><span>DAVIET Classroom</span>
                 </a>
             </h3>
             <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
@@ -16,26 +16,44 @@
 
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ml-lg-auto">
-                    <li class="nav-item active">
+                    <!-- <li class="nav-item active">
                         <a class="nav-link" routerLink="/layout/home">Home <span class="sr-only">(current)</span></a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/department" *ngIf="userType == 1">Department</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/department">Department</a>
-                    </li>
-                    <li class="nav-item" *ngIf="email == null">
-                        <a class="nav-link" routerLink="/layout/admin-login">Admin login</a>
+                        <a class="nav-link" routerLink="/layout/course" *ngIf="userType == 1">Course</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/course">Add course</a>
+                        <a class="nav-link" routerLink="/layout/semester" *ngIf="userType == 1 || userType == 2">Semester</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/semester">Add semester</a>
+                        <a class="nav-link" routerLink="/layout/teacher-material" *ngIf="userType == 1 || userType == 2">T-Merial</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/layout/add-student">Add student</a>
+                        <a class="nav-link" routerLink="/layout/teacher-assignment" *ngIf="userType == 1 || userType == 2">T-Assignment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/student-assignment" *ngIf="userType == 3 || userType == 2">S-Assignment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/subject" *ngIf="userType == 1">Subject</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/add-student" *ngIf="userType == 2">Student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/layout/subject" *ngIf="userType == 2">Subject</a>
                     </li>
                     <li class="nav-item" *ngIf="teacherRegisterEmail == null">
                         <a class="nav-link" routerLink="/layout/teacher-login">Teacher login</a>
+                    </li>
+                    <li class="nav-item" *ngIf="teacherRegisterEmail == null">
+                        <a class="nav-link" routerLink="/layout/student-login">Student login</a>
+                    </li>
+                    <li class="nav-item" *ngIf="email == null">
+                        <a class="nav-link" routerLink="/layout/admin-login">Admin login</a>
                     </li>
                     <li class="nav-item" *ngIf="email">
                         <a class="nav-link" (click)="logout()">Logout</a>
